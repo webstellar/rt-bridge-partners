@@ -38,7 +38,7 @@ export default function HeroSection() {
   return (
     <section
       id="home"
-      className="relative w-full h-[50vh] md:h-[66vh] lg:h-screen overflow-hidden"
+      className="relative w-full h-[70vh] md:h-[66vh] lg:h-screen overflow-hidden"
     >
       {/* ── Background slides ── */}
       {slides.map((slide, index) => (
@@ -67,12 +67,12 @@ export default function HeroSection() {
         {/* Main content — centered vertically in remaining space */}
         <div className="flex-1 flex flex-col justify-center max-w-[720px]">
           {/* H1 — light weight */}
-          <h1 className="text-white text-[48px] sm:text-[46px] lg:text-[68px] font-light leading-tight">
+          <h1 className="text-white text-[40px] sm:text-[40px] lg:text-[68px] font-light leading-tight">
             Bridge Partners
           </h1>
 
           {/* H2 — bold, tight line-height with H1 */}
-          <h2 className="text-white text-[48px] sm:text-[46px] lg:text-[68px] font-bold leading-tight -mt-1">
+          <h2 className="text-white text-[40px] sm:text-[40px] lg:text-[68px] font-bold leading-tight -mt-1">
             Strategic Gateway to the DRC
           </h2>
 
