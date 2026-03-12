@@ -162,7 +162,7 @@ export default function Process() {
   }, []);
 
   return (
-    <section className="w-full bg-white py-12 sm:py-16 lg:py-20">
+    <section id="whyus" className="w-full bg-white py-12 sm:py-16 lg:py-20">
       {/* Section 1: Heading */}
       <div className="px-6 sm:px-12 lg:px-20">
         <h2 className="text-black text-[32px] sm:text-[40px] lg:text-[56px] font-medium leading-tight max-w-[900px]">

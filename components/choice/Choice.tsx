@@ -78,8 +78,13 @@ function ChoiceCard({ item }: { item: (typeof choiceItems)[number] }) {
 
 /* ─── Main Choice Section ─── */
 export default function Choice() {
+  const scrollToContact = () => {
+    const el = document.getElementById("contact");
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
-    <section id="whyus" className="w-full bg-white border-y border-[#03B209]">
+    <section className="w-full bg-white border-y border-[#03B209]">
       <div className="flex flex-col lg:flex-row">
         {/* Column 1: Sticky text + button */}
         <div className="w-full lg:w-1/2 px-6 sm:px-12 lg:px-20 py-12 sm:py-16 lg:py-0 lg:border-r border-[#03B209]">
@@ -89,7 +94,7 @@ export default function Choice() {
               execution that turns opportunity into measurable results.
             </h2>
 
-            <Button className="mt-8 w-fit bg-[#03b209] hover:bg-[#02a008] text-white text-[14px] font-normal tracking-wide uppercase px-8 py-5 rounded-none cursor-pointer gap-2">
+            <Button onClick={scrollToContact} className="mt-8 w-fit bg-[#03b209] hover:bg-[#02a008] text-white text-[14px] font-normal tracking-wide uppercase px-8 py-5 rounded-none cursor-pointer gap-2">
               Learn More
               <ArrowRight className="size-4" />
             </Button>

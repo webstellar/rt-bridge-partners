@@ -93,7 +93,7 @@ export default function HeroSection() {
             </Button>
 
             <button
-              onClick={() => scrollToSection("pillars")}
+              onClick={() => scrollToSection("contact")}
               className="group flex items-center gap-2 text-white text-[13px] sm:text-[14px] font-semibold tracking-wide uppercase cursor-pointer hover:opacity-80 transition-opacity"
             >
               Learn More
@@ -124,14 +124,17 @@ export default function HeroSection() {
           </div>
 
           {/* Scroll indicator (right, desktop/tablet only) */}
-          <div className="hidden md:flex items-center gap-2 flex-1 justify-end">
+          <button
+            onClick={() => scrollToSection("pillars")}
+            className="hidden md:flex items-center gap-2 flex-1 justify-end cursor-pointer hover:opacity-80 transition-opacity"
+          >
             <div className="animate-bounce">
               <Mouse className="size-5 text-white/80" />
             </div>
             <span className="text-white/80 text-[12px] font-medium tracking-widest uppercase">
               Scroll to Explore
             </span>
-          </div>
+          </button>
         </div>
       </div>
     </section>

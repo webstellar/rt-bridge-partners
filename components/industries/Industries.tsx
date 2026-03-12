@@ -24,6 +24,11 @@ export default function Industries() {
     return () => observer.disconnect();
   }, []);
 
+  const scrollToContact = () => {
+    const el = document.getElementById("contact");
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <section
       ref={sectionRef}
@@ -51,7 +56,7 @@ export default function Industries() {
           disproportionate market share.
         </h2>
 
-        <Button className="mt-8 w-fit bg-[#03b209] hover:bg-[#02a008] text-white text-[14px] font-normal tracking-wide uppercase px-8 py-5 rounded-none cursor-pointer gap-2">
+        <Button onClick={scrollToContact} className="mt-8 w-fit bg-[#03b209] hover:bg-[#02a008] text-white text-[14px] font-normal tracking-wide uppercase px-8 py-5 rounded-none cursor-pointer gap-2">
           Learn More
           <ArrowRight className="size-4" />
         </Button>
