@@ -84,7 +84,7 @@ function MarketCard({ item }: { item: (typeof marketItems)[number] }) {
 
 /* ─── Contact Form ─── */
 function ContactForm() {
-  const [firstName, setFirstName] = useState("");
+  const [firstName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [accepted, setAccepted] = useState(false);
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">(
@@ -105,7 +105,7 @@ function ContactForm() {
 
       if (res.ok) {
         setStatus("sent");
-        setFirstName("");
+        setFullName("");
         setEmail("");
         setAccepted(false);
       } else {
@@ -141,9 +141,9 @@ function ContactForm() {
       >
         <input
           type="text"
-          placeholder="First Name"
+          placeholder="Full Name"
           value={firstName}
-          onChange={(e) => setFirstName(e.target.value)}
+          onChange={(e) => setFullName(e.target.value)}
           required
           className="w-full bg-[#f5f5f5] text-black text-[15px] px-5 py-4 rounded-md outline-none placeholder:text-black/50 focus:ring-2 focus:ring-[#03b209]/30 transition"
         />
