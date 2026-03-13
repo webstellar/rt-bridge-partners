@@ -38,7 +38,7 @@ export default function HeroSection() {
   return (
     <section
       id="home"
-      className="relative w-full h-[70vh] md:h-[66vh] lg:h-screen overflow-hidden"
+      className="relative w-full h-[75vh] md:h-[85vh] lg:h-screen overflow-hidden"
     >
       {/* ── Background slides ── */}
       {slides.map((slide, index) => (
