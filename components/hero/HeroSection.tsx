@@ -60,19 +60,19 @@ export default function HeroSection() {
       ))}
 
       {/* ── Green accent line (below header area) ── */}
-      <div className="absolute top-[88px] sm:top-[90px] left-0 right-0 h-[3px] bg-[#03b209] z-10" />
+      <div className="absolute top-[85px] sm:top-[90px] left-0 right-0 h-[3px] bg-[#03b209] z-10" />
 
       {/* ── Content ── */}
       <div className="relative z-10 flex flex-col justify-between h-full px-6 sm:px-12 lg:px-20 pt-[120px] pb-8">
         {/* Main content — centered vertically in remaining space */}
         <div className="flex-1 flex flex-col justify-center max-w-[720px]">
           {/* H1 — light weight */}
-          <h1 className="text-white text-[40px] sm:text-[40px] lg:text-[68px] font-light leading-tight">
+          <h1 className="text-white text-[38px] sm:text-[38px] lg:text-[68px] font-light leading-tight">
             Bridge Partners
           </h1>
 
           {/* H2 — bold, tight line-height with H1 */}
-          <h2 className="text-white text-[40px] sm:text-[40px] lg:text-[68px] font-bold leading-tight -mt-1">
+          <h2 className="text-white text-[38px] sm:text-[38px] lg:text-[68px] font-bold leading-tight -mt-1">
             Strategic Gateway to the DRC
           </h2>
 
