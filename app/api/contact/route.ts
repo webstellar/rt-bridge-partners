@@ -3,36 +3,38 @@ import nodemailer from "nodemailer";
 
 export async function POST(req: NextRequest) {
   try {
-    const { firstName, email } = await req.json();
+    const { fullName, email, company, market, message } = await req.json();
 
-    if (!firstName || !email) {
+    if (!fullName || !email) {
       return NextResponse.json(
         { error: "First name and email are required." },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
-    // Configure your SMTP transporter
-    // For production, set these values via environment variables:
-    //   SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS
     const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST || "smtp.gmail.com",
-      port: Number(process.env.SMTP_PORT) || 587,
-      secure: false,
+      host: process.env.SMTP_HOST,
+      port: Number(process.env.SMTP_PORT),
+      secure: true,
       auth: {
-        user: process.env.SMTP_USER || "",
-        pass: process.env.SMTP_PASS || "",
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS,
       },
     });
 
     await transporter.sendMail({
-      from: process.env.SMTP_USER || "noreply@bridgepartners.com",
-      to: "pete.onyegbule@gmail.com",
-      subject: `New Contact: ${firstName}`,
+      from: process.env.SMTP_USER,
+      replyTo: email,
+      to: "x.carbonel@gmail.com",
+      subject: `New Contact: ${fullName}`,
+      cc: "pete.onyegbule@gmail.com",
       html: `
         <h2>New Contact Form Submission</h2>
-        <p><strong>First Name:</strong> ${firstName}</p>
+        <p><strong>Full Name:</strong> ${fullName}</p>
         <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Company:</strong> ${company}</p>
+        <p><strong>Market:</strong> ${market}</p>
+        <p><strong>Message:</strong> ${message}</p>
       `,
     });
 
@@ -41,7 +43,7 @@ export async function POST(req: NextRequest) {
     console.error("Contact form error:", error);
     return NextResponse.json(
       { error: "Failed to send message." },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

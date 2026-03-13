@@ -103,7 +103,7 @@ function ContactForm() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ fullName, email }),
+        body: JSON.stringify({ fullName, email, company, market, message }),
       });
 
       if (res.ok) {
@@ -155,6 +155,61 @@ function ContactForm() {
           placeholder="Email Address"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          required
+          className="w-full bg-[#f5f5f5] text-black text-[15px] px-5 py-4 rounded-md outline-none placeholder:text-black/50 focus:ring-2 focus:ring-[#03b209]/30 transition"
+        />
+        <input
+          type="text"
+          placeholder="Company"
+          value={company}
+          onChange={(e) => setCompany(e.target.value)}
+          required
+          className="w-full bg-[#f5f5f5] text-black text-[15px] px-5 py-4 rounded-md outline-none placeholder:text-black/50 focus:ring-2 focus:ring-[#03b209]/30 transition"
+        />
+
+        <div className="relative w-full">
+          <select
+            value={market}
+            onChange={(e) => setMarket(e.target.value)}
+            required
+            className="w-full bg-[#f5f5f5] text-black text-[15px] px-5 py-4 rounded-md outline-none appearance-none focus:ring-2 focus:ring-[#03b209]/30 transition"
+          >
+            <option value="" disabled>
+              Select Market
+            </option>
+            <option value="Mining & Resources">Mining & Resources</option>
+            <option value="Energy & Infrastructure">
+              Energy & Infrastructure
+            </option>
+            <option value="Agriculture">Agriculture</option>
+            <option value="Professional Services">Professional Services</option>
+            <option value="Import & Export">Import & Export</option>
+            <option value="Others">Others</option>
+          </select>
+
+          {/* Custom Arrow Icon */}
+          <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-5 text-black/50">
+            <svg
+              className="h-4 w-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </div>
+        </div>
+
+        <textarea
+          placeholder="Message"
+          rows={5}
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
           required
           className="w-full bg-[#f5f5f5] text-black text-[15px] px-5 py-4 rounded-md outline-none placeholder:text-black/50 focus:ring-2 focus:ring-[#03b209]/30 transition"
         />
