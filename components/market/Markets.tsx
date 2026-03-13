@@ -84,8 +84,11 @@ function MarketCard({ item }: { item: (typeof marketItems)[number] }) {
 
 /* ─── Contact Form ─── */
 function ContactForm() {
-  const [firstName, setFullName] = useState("");
+  const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
+  const [company, setCompany] = useState("");
+  const [market, setMarket] = useState("");
+  const [message, setMessage] = useState("");
   const [accepted, setAccepted] = useState(false);
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">(
     "idle",
@@ -100,7 +103,7 @@ function ContactForm() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ firstName, email }),
+        body: JSON.stringify({ fullName, email }),
       });
 
       if (res.ok) {
@@ -142,7 +145,7 @@ function ContactForm() {
         <input
           type="text"
           placeholder="Full Name"
-          value={firstName}
+          value={fullName}
           onChange={(e) => setFullName(e.target.value)}
           required
           className="w-full bg-[#f5f5f5] text-black text-[15px] px-5 py-4 rounded-md outline-none placeholder:text-black/50 focus:ring-2 focus:ring-[#03b209]/30 transition"
