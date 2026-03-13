@@ -110,6 +110,9 @@ function ContactForm() {
         setStatus("sent");
         setFullName("");
         setEmail("");
+        setCompany("");
+        setMarket("");
+        setMessage("");
         setAccepted(false);
       } else {
         setStatus("error");
