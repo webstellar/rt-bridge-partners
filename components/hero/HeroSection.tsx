@@ -60,7 +60,7 @@ export default function HeroSection() {
       ))}
 
       {/* ── Green accent line (below header area) ── */}
-      <div className="absolute top-[85px] sm:top-[90px] left-0 right-0 h-[3px] bg-[#03b209] z-10" />
+      <div className="absolute top-[80px] sm:top-[90px] left-0 right-0 h-[3px] bg-[#03b209] z-10" />
 
       {/* ── Content ── */}
       <div className="relative z-10 flex flex-col justify-between h-full px-6 sm:px-12 lg:px-20 pt-[120px] pb-8">
