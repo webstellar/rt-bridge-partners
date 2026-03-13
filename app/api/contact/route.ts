@@ -39,9 +39,7 @@ export async function POST(req: NextRequest) {
                   <!-- Header -->
                   <tr>
                     <td style="background-color:#03b209;padding:36px 40px;text-align:center;">
-                      <h1 style="margin:0;color:#ffffff;font-size:24px;font-weight:700;letter-spacing:1px;text-transform:uppercase;">
-                        RhinoTech
-                      </h1>
+                      <img src="https://www.bridgepartners.pro/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fbridge-partners-white-logo.bd53ae1d.png&w=1920&q=75" alt="Bridge Partners Logo" />
                       <p style="margin:8px 0 0;color:rgba(255,255,255,0.85);font-size:13px;letter-spacing:2px;text-transform:uppercase;">
                         New Contact Form Submission
                       </p>
@@ -128,7 +126,7 @@ export async function POST(req: NextRequest) {
                         This email was sent automatically from your website contact form.
                       </p>
                       <p style="margin:8px 0 0;font-size:12px;color:#555555;">
-                        © ${new Date().getFullYear()} RhinoTech. All rights reserved.
+                        © ${new Date().getFullYear()} Bridge Partners. All rights reserved.
                       </p>
                     </td>
                   </tr>
