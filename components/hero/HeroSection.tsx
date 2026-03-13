@@ -108,7 +108,7 @@ export default function HeroSection() {
           <div className="flex-1" />
 
           {/* Pagination dots (center) */}
-          <div className="flex items-center justify-center gap-2 flex-1">
+          <div className="flex items-center lg:justify-center justify-start gap-2 flex-1">
             {slides.map((_, index) => (
               <button
                 key={index}
