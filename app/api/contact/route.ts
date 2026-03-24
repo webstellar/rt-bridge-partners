@@ -15,7 +15,7 @@ export async function POST(req: NextRequest) {
     }
 
     await resend.emails.send({
-      from: "Contact Form <no-reply@bridgepartners.pro>",
+      from: "Contact Form <no-reply@mail.bridgepartners.pro>",
       replyTo: email,
       to: "x.carbonel@gmail.com",
       cc: "pete.onyegbule@gmail.com",
